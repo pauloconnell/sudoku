@@ -22,7 +22,7 @@ app.route('/')
   });
 
 //For FCC testing purposes
-fccTestingRoutes(app);
+//fccTestingRoutes(app);      uncomment this **********
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {

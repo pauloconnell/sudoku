@@ -1,22 +1,101 @@
-code {
-  background: #d0d0d5;
+body {
+  background: 
+  url(https://res.cloudinary.com/pollie/image/upload/v1606771736/Lux_Downtown_c5inrb.jpg);
+ 
+  background-size: flex;
 }
+
+
+
+h3 {
+  background:rgba(187, 187, 218, 0.377);
+}
+td {
+  border: 1px solid;
+  padding: 0.1em;
+}
+
+input[type="text"] {
+  border: 0px;
+  font-weight: bold;
+  font-size:20px;
+  width: 1.5em;
+  height: 1.5em;
+  text-align: center;
+}
+
+
+textarea {
+  width: auto;
+  min-width:200px;
+  height:100px;
+  opacity: .75;
+}
+
+button {
+  margin:0,50,0,50;
+  background-color: rgba(19, 19, 231, 0.3);
+  border-radius: 10px;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+button:hover {
+  background-color: #3e8e41;
+  color: white;
+}
+
+.center {
+  display: inline-block;
+  justify-content: right;
+  align-items: right;
+  margin:0,40px,0,30px;
+}
+
+.grid {
+  border: 3px solid;
+  border-spacing: 0;
+}
+
 
 .container {
   display: flex;
   flex-direction: column;
 }
 
+
 .form-container {
   max-width: 95%;
 }
 
-textarea {
-  width: 100%;
+.row {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+}
+
+.form-container {
+    align-self: flex-end;
+  }
+
+#console {
+  display: inline;
+}
+
+#consoleOut {
+  width:100%;
+  font-weight: bold;
 }
 
 #user-stories {
   font-size: 1.2em;
+ 
+}
+#story {
+   background-color:rgba(146, 146, 221, 0.6);
 }
 
 #error-msg {
@@ -26,27 +105,12 @@ textarea {
 }
 
 #sudoku-grid {
-  margin-left: 20px;
+  margin: auto;
   text-align: center;
   display: inline;
 }
 
-.grid {
-  border: 3px solid;
-  border-spacing: 0;
-}
 
-td {
-  border: 1px solid;
-  padding: 0.3em;
-}
-
-input[type="text"] {
-  border: 0px;
-  width: 2em;
-  height: 2em;
-  text-align: center;
-}
 
 .C1, .C2, .C3, .C4, .C5, .C6, .C7, .C8, .C9, .F1, .F2, .F3, .F4, .F5, .F6, .F7, .F8, .F9 {
   border-bottom: 3px solid;
@@ -56,12 +120,4 @@ input[type="text"] {
   border-right: 3px solid;
 }
 
-@media (min-width: 800px) {
-  .container {
-    flex-direction: row;
-  }
 
-  .form-container {
-    align-self: flex-end;
-  }
-}

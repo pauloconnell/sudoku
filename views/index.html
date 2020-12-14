@@ -4,7 +4,7 @@
     <title>Sudoku Solver</title>
     <meta
       name="description"
-      content="An example for the fCC QA Sudoku Solver project"
+      content="FCC QA Sudoku Solver project by Paul O'Connell"
     />
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,88 +12,33 @@
     <link rel="stylesheet" href="../public/style.css" type="text/css" />
   </head>
   <body>
+    <center>
     <header>
+      
       <h1>
-        Quality Assurance 4: Sudoku Solver
+        QA #4: Sudoku Solver
       </h1>
     </header>
-    <div id="user-stories">
-      <h3>User Stories</h3>
-      <ol>
-        <li>
-          I can enter a sudoku puzzle by filling in the text area with either a
-          number or period (.) to represent an empty cell. 
-        </li>
-        <li>
-          When a valid number is entered in the text area, the same number is applied 
-          to the correct cell of the sudoku grid.
-        </li>
-        <li>
-          I can enter a sudoku puzzle by adding numbers directly to the sudoku
-          grid.
-        </li>
-        <li>
-          When a valid number is entered in the sudoku grid, the same
-          number appears in the correct position in the text area.
-        </li>
-        <li>
-          The text area should only update the corresponding sudoku grid cell when a whole number 
-          between 1 and 9 is entered.
-        </li>
-        <li>
-          The sudoku grid should only update the puzzle string in the text area when a whole number 
-          between 1 and 9 is entered into a cell.
-        </li>
-        <li>
-          I can solve an incomplete puzzle by clicking the "Solve" button. When
-          a solution is found, the sudoku grid and text area are automatically populated with
-          the correct numbers for each cell in the grid or position in the text area.
-        </li>
-        <li>
-          This sudoku solver is not expected to be able to solve every incomplete puzzle. See
-          <code>/public/puzzle-strings.js</code> for a list of puzzle strings it should be able
-          to solve along with their solutions.
-        </li>
-        <li>
-          If the puzzle is not 81 numbers or periods long, append the message "Error: Expected 
-          puzzle to be 81 characters long." to the <code>error-msg</code> <code>div</code> so 
-          the text appears in red.
-        </li>
-        <li>
-          I can clear the text area and sudoku grid by clicking the "Clear"
-          button.
-        </li>
-        <li>
-          All 6 unit tests are complete and passing. See <code>/tests/1_unit-tests.js</code> for 
-          the expected behavior you should write tests for.
-        </li>
-        <li>
-          All 4 functional tests are complete and passing. See 
-          <code>/tests/2_functional-tests.js</code> for the functionality you should write tests for.
-        </li>
-      </ol>
-    </div>
-    <hr style="margin: 25px" />
-    <div class="container">
-      <div class="form-container">
-        <textarea
-          rows="10"
-          cols="85"
-          id="text-input"
-        ></textarea>
-        <br />
-        <input type="button" value="Solve" id="solve-button" />
-        <input type="button" value="Clear" id="clear-button" />
-        <div id="error-msg"></div>
-      </div>
-      <div id="sudoku-grid">
-        <table class="grid">
-          <tbody>
-            <tr>
-              <td class="A1">
-                <input
-                  autocomplete="disabled"
-                  type="text"
+    
+    <button>
+    <input type="button" class="center" value="Solve" id="solve-button" /></button>
+    <button>
+       <input type="button" class="center" value="Clear" id="clear-button" /></button>
+    
+     <div id="error-msg"></div>   
+    </center>   
+    <div class="row">
+      <span class="column">
+        <center>
+     <div id="sudoku-grid">
+
+     <table class="grid">
+     <tbody>
+       <tr>
+         <td class="A1">
+             <input
+               autocomplete="disabled"
+                type="text"
                   size="1"
                   maxlength="1"
                   id="A1"
@@ -919,6 +864,77 @@
             </tr>
           </tbody>
         </table>
+      </div>
+      </center>
+      </span><span id="console" class="column">
+        <center>
+        <textarea readonly id="consoleOut">How to solve SUDUKO - Replace the '.' in each box with a number 1-9.
+    Each line, column, and square should contain numbers 1 through 9...good luck!!!</textarea>
+        </center>
+        </span></div>
+      <hr><center>
+      <h3><label>Load new Board(use board 1 or 4)  </label></h3>
+      <span id="board1"><button>board 1</button></span>
+      <span id="board2"><button>2 Not Solvable?</button></span>
+       <span id="board3"><button>3 Not Solvable?</button></span>
+      <span id="board4"><button>board 4</button></span>
+      </center>
+      <hr>
+
+
+
+      <div id="user-stories">
+      <center><h3>User Stories</h3></center>
+      <div id="story">
+      <ol>
+        <li>
+          I can enter a sudoku puzzle by filling in the text area with either a
+          number or period (.) to represent an empty cell. 
+        </li>
+        <li>
+          When a valid number is entered in the text area, the same number is applied 
+          to the correct cell of the sudoku grid.
+        </li>
+        <li>
+          I can enter a sudoku puzzle by adding numbers directly to the sudoku
+          grid.
+        </li>
+        <li>
+          When a valid number is entered in the sudoku grid, the same
+          number appears in the correct position in the text area.
+        </li>
+        <li>
+          The text area should only update the corresponding sudoku grid cell when a whole number 
+          between 1 and 9 is entered.
+        </li>
+        <li>
+          The sudoku grid should only update the puzzle string in the text area when a whole number 
+          between 1 and 9 is entered into a cell.
+        </li>
+        <li>
+          I can solve an incomplete puzzle by clicking the "Solve" button. When
+          a solution is found, the sudoku grid and text area are automatically populated with
+          the correct numbers for each cell in the grid or position in the text area.
+        </li>
+        <li>
+          I can clear the text area and sudoku grid by clicking the "Clear"
+          button.
+        </li>
+
+      </ol>
+      </div>
+    </div>
+    <hr style="margin: 25px" />
+    <div class="container">
+      <div class="form-container">
+        <label>Data Box to copy/paste boards. :</label>
+        <textarea
+          rows="10"
+          cols="85"
+          id="text-input"
+        ></textarea>
+        <br />
+        
       </div>
     </div>
   </body>
