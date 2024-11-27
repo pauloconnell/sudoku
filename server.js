@@ -3,15 +3,12 @@ const express     = require('express');
 const bodyParser  = require('body-parser');
 const expect      = require('chai').expect;
 const cors        = require('cors');
-
 const fccTestingRoutes  = require('./routes/fcctesting.js');
 const runner            = require('./test-runner');
-
 const app = express();
 
 app.use('/public', express.static(process.cwd() + '/public'));
 app.use(cors({origin: '*'})); //For FCC testing purposes only
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,7 +19,7 @@ app.route('/')
   });
 
 //For FCC testing purposes
-//fccTestingRoutes(app);      uncomment this **********
+//fccTestingRoutes(app);  
     
 //404 Not Found Middleware
 app.use(function(req, res, next) {

@@ -1,4 +1,5 @@
 import { puzzlesAndSolutions } from './puzzle-strings.js';
+//import { hintCheck } from '/hintCheck.js'
 const textBox=document.getElementById('text-input');
 const boardOption1=document.getElementById('board1');
 const boardOption2=document.getElementById('board2');
@@ -12,9 +13,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
  console.log("inside beginning");
+ 
 var cellArray=document.querySelectorAll(".sudoku-input");
 const clearButton=document.querySelector('#clear-button');
 const solveButton=document.querySelector('#solve-button');
+
+const hintButton=document.querySelector('#hint-button');
 //document.getElementById("#board1").addEventListener(onclick, newBoard1);
 const board1Button=document.querySelector("#board1");
 const board2Button=document.querySelector("#board2");
@@ -22,6 +26,8 @@ const board3Button=document.querySelector("#board3");
 const board4Button=document.querySelector("#board4");
 
 const errorBox=document.querySelector('#error-msg');
+
+
 const regex= /^[1-9.]*$/;     // regex ensures input is digit or .
 var rows=[];
 
@@ -67,6 +73,13 @@ let clear=()=>{   // reset the board if clear pressed
   textBox.value= puzzlesAndSolutions[1][0];
   textBoxChanged();
 }
+
+let hint=()=>{
+  console.log("hint button pressed");
+  hintCheck(textInput.value);
+  //hintCheck will find any errors and change background color to yellow
+}
+
 let newBoard1=()=>{
    
     console.log("board  button pressed");
@@ -88,6 +101,8 @@ let newBoard4=()=>{
 }
 
 let solveButtonPressed=()=>{
+errorBox.innerHTML="computing, please wait-see console log for live calculation";
+alert("about to solve, open console log for live calculation");
   var textBoxValues=textBox.value.split('');
   var playBoard=createBoard(textBoxValues);
   console.log("solve button pressed"+playBoard);
@@ -100,6 +115,8 @@ let solveButtonPressed=()=>{
   };
   textBox.value=playBoard.join("");
   textBoxChanged();           // updates the board with the solution
+  errorBox.innerText="Computing Done - if it's not solved now, IT'S NOT SOLVABLE";
+
 }
 
 

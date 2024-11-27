@@ -71,9 +71,14 @@ button:hover {
   max-width: 95%;
 }
 
+.column{
+  margin:5px 30% 5px 30%;
+  align-items: center;
+}
+
 .row {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
 }
 
@@ -83,6 +88,7 @@ button:hover {
 
 #console {
   display: inline;
+   z-index: -1;
 }
 
 #consoleOut {
@@ -120,4 +126,15 @@ button:hover {
   border-right: 3px solid;
 }
 
-
+@media only screen and (max-width: 700px) {
+  .column{
+    margin:5px 10% 5px 10%;
+}
+@media only screen and (max-width: 500px) {
+  .column{
+    margin:5px 5% 5px 5%;
+}
+@media only screen and (max-width: 400px) {
+  .column{
+    margin:5px 1% 5px 1%;
+}

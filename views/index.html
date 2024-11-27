@@ -20,15 +20,16 @@
       </h1>
     </header>
     
-    <button>
-    <input type="button" class="center" value="Solve" id="solve-button" /></button>
-    <button>
-       <input type="button" class="center" value="Clear" id="clear-button" /></button>
-    
-     <div id="error-msg"></div>   
+    <button class="center" value="Solve" id="solve-button" >
+      Solve</button>
+    <button class="center" id="clear-button">
+      Clear</button>
+    <button class="center"  id="hint-button" >
+       Hint(future feature)</button>
+     <div id="error-msg">Error box</div>   
     </center>   
-    <div class="row">
-      <span class="column">
+    <div class="row" id="mainBoard">
+      <div class="column" >
         <center>
      <div id="sudoku-grid">
 
@@ -866,12 +867,12 @@
         </table>
       </div>
       </center>
-      </span><span id="console" class="column">
+      </div><div id="console" class="column">
         <center>
         <textarea readonly id="consoleOut">How to solve SUDUKO - Replace the '.' in each box with a number 1-9.
     Each line, column, and square should contain numbers 1 through 9...good luck!!!</textarea>
         </center>
-        </span></div>
+        </div></div>
       <hr><center>
       <h3><label>Load new Board(use board 1 or 4)  </label></h3>
       <span id="board1"><button>board 1</button></span>
