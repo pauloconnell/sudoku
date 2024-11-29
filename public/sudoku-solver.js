@@ -3,7 +3,7 @@ import { puzzlesAndSolutions } from './puzzle-strings.js';
 const textBox=document.getElementById('text-input');
 const boardOption1=document.getElementById('board1');
 const boardOption2=document.getElementById('board2');
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',  () => {
   // Load a simple puzzle into the text area
   textBox.value = puzzlesAndSolutions[1][0];  //set board to one in file - note first file is not solveable
   console.log("inside script"); 
